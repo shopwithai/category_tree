@@ -467,6 +467,42 @@ categories = [
     {"id": 424, "name": "Uncategorized", "is_root": False, "parents": [20]}
 ]
 
+def get_implied_categories(category_id, categories):
+    """
+    Returns a set of category IDs that are implied by the given category ID,
+    including the category itself and all its descendants in the tree.
+    
+    Args:
+        category_id (int): The ID of the category to start from
+        categories (list): List of category dictionaries with id, name, and parents fields
+    
+    Returns:
+        set: Set of category IDs that are implied by the given category
+    """
+    implied = {category_id}  # Start with the given category
+    
+    # Create a mapping of parent IDs to child IDs for faster lookup
+    parent_to_children = {}
+    for category in categories:
+        for parent_id in category['parents']:
+            if parent_id not in parent_to_children:
+                parent_to_children[parent_id] = set()
+            parent_to_children[parent_id].add(category['id'])
+    
+    # Helper function to recursively find all descendants
+    def find_descendants(current_id):
+        if current_id in parent_to_children:
+            children = parent_to_children[current_id]
+            for child_id in children:
+                if child_id not in implied:  # Avoid cycles
+                    implied.add(child_id)
+                    find_descendants(child_id)
+    
+    # Find all descendants of the starting category
+    find_descendants(category_id)
+    
+    return implied
+
 
 def build_category_tree(categories, parent_id=None, level=0):
     tree = []
