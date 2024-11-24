@@ -23,56 +23,10 @@ categories = [
     {"id": 20, "name": "Miscellaneous", "is_root": True, "parents": [0]},
 
     # Automotive & Vehicles
-    
+    # moved to own file
 
     # Fashion & Accessories
-    {"id": 38, "name": "Women's Clothing", "is_root": False, "parents": [2]},
-    {"id": 39, "name": "Tops", "is_root": False, "parents": [38]},
-    {"id": 40, "name": "Dresses", "is_root": False, "parents": [38]},
-    {"id": 41, "name": "Bottoms (Jeans, Skirts, Pants)", "is_root": False, "parents": [38]},
-    {"id": 42, "name": "Outerwear (Coats, Jackets)", "is_root": False, "parents": [38]},
-    {"id": 43, "name": "Swimwear", "is_root": False, "parents": [38]},
-    {"id": 44, "name": "Activewear", "is_root": False, "parents": [38]},
-    {"id": 45, "name": "Intimates & Sleepwear", "is_root": False, "parents": [38]},
-    {"id": 46, "name": "Men's Clothing", "is_root": False, "parents": [2]},
-    {"id": 47, "name": "Shirts", "is_root": False, "parents": [46]},
-    {"id": 48, "name": "Trousers & Jeans", "is_root": False, "parents": [46]},
-    {"id": 49, "name": "Suits & Blazers", "is_root": False, "parents": [46]},
-    {"id": 50, "name": "Outerwear", "is_root": False, "parents": [46]},
-    {"id": 51, "name": "Activewear", "is_root": False, "parents": [46]},
-    {"id": 52, "name": "Underwear & Socks", "is_root": False, "parents": [46]},
-    {"id": 53, "name": "Kids' Clothing", "is_root": False, "parents": [2]},
-    {"id": 54, "name": "Boys' Clothing", "is_root": False, "parents": [53]},
-    {"id": 55, "name": "Girls' Clothing", "is_root": False, "parents": [53]},
-    {"id": 56, "name": "Baby Clothing", "is_root": False, "parents": [53]},
-    {"id": 57, "name": "Shoes", "is_root": False, "parents": [2]},
-    {"id": 58, "name": "Women's Shoes", "is_root": False, "parents": [57]},
-    {"id": 59, "name": "Men's Shoes", "is_root": False, "parents": [57]},
-    {"id": 60, "name": "Kids' Shoes", "is_root": False, "parents": [57]},
-    {"id": 61, "name": "Accessories", "is_root": False, "parents": [2]},
-    {"id": 62, "name": "Bags & Wallets", "is_root": False, "parents": [61]},
-    {"id": 63, "name": "Handbags", "is_root": False, "parents": [62]},
-    {"id": 64, "name": "Backpacks", "is_root": False, "parents": [62]},
-    {"id": 65, "name": "Wallets", "is_root": False, "parents": [62]},
-    {"id": 66, "name": "Luggage", "is_root": False, "parents": [62]},
-    {"id": 67, "name": "Jewelry", "is_root": False, "parents": [61]},
-    {"id": 68, "name": "Necklaces", "is_root": False, "parents": [67]},
-    {"id": 69, "name": "Rings", "is_root": False, "parents": [67]},
-    {"id": 70, "name": "Earrings", "is_root": False, "parents": [67]},
-    {"id": 71, "name": "Bracelets", "is_root": False, "parents": [67]},
-    {"id": 72, "name": "Watches", "is_root": False, "parents": [61]},
-    {"id": 73, "name": "Sunglasses & Eyewear", "is_root": False, "parents": [61]},
-    {"id": 74, "name": "Hats", "is_root": False, "parents": [61]},
-    {"id": 75, "name": "Belts", "is_root": False, "parents": [61]},
-    {"id": 76, "name": "Scarves & Wraps", "is_root": False, "parents": [61]},
-    {"id": 77, "name": "Ties & Pocket Squares", "is_root": False, "parents": [61]},
-    {"id": 78, "name": "Beauty & Personal Care", "is_root": False, "parents": [2]},
-    {"id": 79, "name": "Skincare", "is_root": False, "parents": [78]},
-    {"id": 80, "name": "Makeup", "is_root": False, "parents": [78]},
-    {"id": 81, "name": "Fragrances", "is_root": False, "parents": [78]},
-    {"id": 82, "name": "Hair Care", "is_root": False, "parents": [78]},
-    {"id": 83, "name": "Nail Care", "is_root": False, "parents": [78]},
-    {"id": 84, "name": "Tools & Accessories", "is_root": False, "parents": [78]},
+    # moved to own file
 
     # Electronics & Computers
     # moved to own file
