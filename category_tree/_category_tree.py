@@ -421,39 +421,49 @@ from .f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
 
 def inherit_properties(categories):
-    # Build a dictionary for quick access to categories by their ID
+    # Create a dictionary for quick access to categories by their ID
     id_to_category = {cat["id"]: cat for cat in categories}
-    updated_categories = []
-
-    for category in categories:
-        # Default properties to an empty list if it doesn't exist
-        category["properties"] = category.get("properties", [])
-        
-        if category["parents"]:
-            inherited_properties = []
-            for parent_id in category["parents"]:
-                # Default parent properties to an empty list if they don't exist
-                parent_properties = id_to_category[parent_id].get("properties", [])
-                inherited_properties.extend(parent_properties)
-            
-            # Create a dictionary to resolve clashes (child overwrites parent)
-            merged_properties = {}
-            for prop in inherited_properties:
-                merged_properties[prop[0]] = prop  # Add parent property
-            for prop in category["properties"]:
-                if prop[0] in merged_properties:
-                    print(
-                        f"Overwriting property '{prop[0]}' in category '{category['name']}' "
-                        f"from parent(s) with new definition: {prop}"
-                    )
-                merged_properties[prop[0]] = prop  # Overwrite with child property
-            
-            # Convert back to a list
-            category["properties"] = list(merged_properties.values())
-        
-        updated_categories.append(category)
     
-    return updated_categories
+    # Ensure every category has a "properties" list
+    for category in categories:
+        category["properties"] = category.get("properties", [])
+
+    def get_inherited_properties(category_id, visited=None):
+        """
+        Recursively fetch all properties inherited from the entire parent chain.
+        """
+        if visited is None:
+            visited = set()
+
+        if category_id in visited:
+            # Avoid circular references
+            return []
+
+        visited.add(category_id)
+
+        category = id_to_category[category_id]
+        all_properties = []
+
+        # Inherit properties from parents recursively
+        for parent_id in category.get("parents", []):
+            parent_properties = get_inherited_properties(parent_id, visited)
+            all_properties.extend(parent_properties)
+
+        # Add this category's own properties
+        all_properties.extend(category["properties"])
+
+        # Resolve clashes (child overwrites parent)
+        resolved_properties = {}
+        for prop in all_properties:
+            resolved_properties[prop[0]] = prop  # Later properties overwrite earlier ones
+
+        return list(resolved_properties.values())
+
+    # Update categories with fully resolved properties
+    for category in categories:
+        category["properties"] = get_inherited_properties(category["id"])
+
+    return categories
 
 
 categories = inherit_properties(categories)
