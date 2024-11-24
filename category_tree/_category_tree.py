@@ -23,23 +23,7 @@ categories = [
     {"id": 20, "name": "Miscellaneous", "is_root": True, "parents": [0]},
 
     # Automotive & Vehicles
-    {"id": 21, "name": "Cars", "is_root": False, "parents": [1]},
-    {"id": 22, "name": "New Cars", "is_root": False, "parents": [21]},
-    {"id": 23, "name": "Used Cars", "is_root": False, "parents": [21]},
-    {"id": 24, "name": "Motorcycles", "is_root": False, "parents": [1]},
-    {"id": 25, "name": "Trucks & Vans", "is_root": False, "parents": [1]},
-    {"id": 26, "name": "Recreational Vehicles (RVs)", "is_root": False, "parents": [1]},
-    {"id": 27, "name": "Boats & Watercraft", "is_root": False, "parents": [1]},
-    {"id": 28, "name": "Vehicle Parts & Accessories", "is_root": False, "parents": [1]},
-    {"id": 29, "name": "Car Parts", "is_root": False, "parents": [28]},
-    {"id": 30, "name": "Motorcycle Parts", "is_root": False, "parents": [28]},
-    {"id": 31, "name": "Tires & Wheels", "is_root": False, "parents": [28]},
-    {"id": 32, "name": "Vehicle Electronics", "is_root": False, "parents": [28]},
-    {"id": 33, "name": "Exterior Accessories", "is_root": False, "parents": [28]},
-    {"id": 34, "name": "Interior Accessories", "is_root": False, "parents": [28]},
-    {"id": 35, "name": "Other Vehicles", "is_root": False, "parents": [1]},
-    {"id": 36, "name": "Bicycles", "is_root": False, "parents": [35]},
-    {"id": 37, "name": "ATVs & UTVs", "is_root": False, "parents": [35]},
+    
 
     # Fashion & Accessories
     {"id": 38, "name": "Women's Clothing", "is_root": False, "parents": [2]},
@@ -416,6 +400,11 @@ categories = [
     {"id": 424, "name": "Uncategorized", "is_root": False, "parents": [20]}
 ]
 
+from .f1_automotive_and_vehicles import automotive_and_vehicles
+categories += automotive_and_vehicles
+
+from .f2_fashion_and_accessories import fashion_and_accessories
+categories += fashion_and_accessories
 
 from .f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
