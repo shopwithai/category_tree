@@ -90,60 +90,7 @@ categories = [
     {"id": 84, "name": "Tools & Accessories", "is_root": False, "parents": [78]},
 
     # Electronics & Computers
-    {"id": 85, "name": "Computers & Tablets", "is_root": False, "parents": [3]},
-    {"id": 86, "name": "Laptops", "is_root": False, "parents": [85]},
-    {"id": 87, "name": "Desktops", "is_root": False, "parents": [85]},
-    {"id": 88, "name": "Tablets", "is_root": False, "parents": [85]},
-    {"id": 89, "name": "Computer Components", "is_root": False, "parents": [85]},
-    {"id": 90, "name": "Processors (CPUs)", "is_root": False, "parents": [89]},
-    {"id": 91, "name": "Graphics Cards (GPUs)", "is_root": False, "parents": [89]},
-    {"id": 92, "name": "Motherboards", "is_root": False, "parents": [89]},
-    {"id": 93, "name": "Memory (RAM)", "is_root": False, "parents": [89]},
-    {"id": 94, "name": "Storage (HDDs, SSDs)", "is_root": False, "parents": [89]},
-    {"id": 95, "name": "Power Supplies", "is_root": False, "parents": [89]},
-    {"id": 96, "name": "Computer Accessories", "is_root": False, "parents": [85]},
-    {"id": 97, "name": "Monitors", "is_root": False, "parents": [96]},
-    {"id": 98, "name": "Keyboards & Mice", "is_root": False, "parents": [96]},
-    {"id": 426, "name": "USB flash drives", "is_root": False, "parents": [96]},
-    {"id": 99, "name": "Networking Equipment", "is_root": False, "parents": [96]},
-    {"id": 100, "name": "Routers", "is_root": False, "parents": [99]},
-    {"id": 101, "name": "Modems", "is_root": False, "parents": [99]},
-    {"id": 102, "name": "Switches", "is_root": False, "parents": [99]},
-    {"id": 103, "name": "Cameras & Lenses", "is_root": False, "parents": [3]},
-    {"id": 104, "name": "Cameras", "is_root": False, "parents": [103]},
-    {"id": 105, "name": "Lenses", "is_root": False, "parents": [103]},
-    {"id": 106, "name": "Camera Accessories", "is_root": False, "parents": [103]},
-    {"id": 107, "name": "Phones & Accessories", "is_root": False, "parents": [3]},
-    {"id": 108, "name": "Smartphones", "is_root": False, "parents": [107]},
-    {"id": 109, "name": "Feature Phones", "is_root": False, "parents": [107]},
-    {"id": 110, "name": "Phone Accessories", "is_root": False, "parents": [107]},
-    {"id": 111, "name": "Audio Equipment", "is_root": False, "parents": [3]},
-    {"id": 112, "name": "Headphones", "is_root": False, "parents": [111]},
-    {"id": 113, "name": "Speakers", "is_root": False, "parents": [111]},
-    {"id": 114, "name": "Home Theater Systems", "is_root": False, "parents": [111]},
-    {"id": 115, "name": "Musical Instruments", "is_root": False, "parents": [111, 8]},  # Also under "Toys, Games & Hobbies"
-    {"id": 116, "name": "TVs & Home Theater", "is_root": False, "parents": [3]},
-    {"id": 117, "name": "Televisions", "is_root": False, "parents": [116]},
-    {"id": 118, "name": "Projectors", "is_root": False, "parents": [116]},
-    {"id": 119, "name": "Streaming Devices", "is_root": False, "parents": [116]},
-    {"id": 120, "name": "Gaming", "is_root": False, "parents": [3]},
-    {"id": 121, "name": "Video Game Consoles", "is_root": False, "parents": [120]},
-    {"id": 122, "name": "Video Games", "is_root": False, "parents": [120]},
-    {"id": 123, "name": "Gaming Accessories", "is_root": False, "parents": [120]},
-    {"id": 124, "name": "Wearable Technology", "is_root": False, "parents": [3]},
-    {"id": 125, "name": "Smartwatches", "is_root": False, "parents": [124]},
-    {"id": 126, "name": "Fitness Trackers", "is_root": False, "parents": [124]},
-    {"id": 127, "name": "Drones & Remote Control", "is_root": False, "parents": [3]},
-    {"id": 128, "name": "Drones", "is_root": False, "parents": [127]},
-    {"id": 129, "name": "RC Vehicles", "is_root": False, "parents": [127]},
-    {"id": 130, "name": "Office Electronics", "is_root": False, "parents": [3]},
-    {"id": 131, "name": "Printers & Scanners", "is_root": False, "parents": [130]},
-    {"id": 132, "name": "Projectors", "is_root": False, "parents": [130]},
-    {"id": 133, "name": "Telephones & Communication", "is_root": False, "parents": [130]},
-    {"id": 134, "name": "Other Electronics", "is_root": False, "parents": [3]},
-    {"id": 135, "name": "Batteries & Power", "is_root": False, "parents": [134]},
-    {"id": 136, "name": "Smart Home Devices", "is_root": False, "parents": [134]},
-    {"id": 137, "name": "Miscellaneous Electronics", "is_root": False, "parents": [134]},
+    # moved to own file
 
     # Home & Garden
     {"id": 138, "name": "Furniture", "is_root": False, "parents": [4]},
@@ -467,6 +414,10 @@ categories = [
     {"id": 423, "name": "Novelty Products", "is_root": False, "parents": [20]},
     {"id": 424, "name": "Uncategorized", "is_root": False, "parents": [20]}
 ]
+
+
+from .3_electronics_and_computers import electronics_and_computers
+categories += electronics_and_computers
 
 def get_implied_categories(category_id, categories):
     """
