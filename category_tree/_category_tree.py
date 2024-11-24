@@ -421,13 +421,21 @@ from .f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
 
 def inherit_properties(categories):
+    # Build a dictionary for quick access to categories by their ID
     id_to_category = {cat["id"]: cat for cat in categories}
     updated_categories = []
+
     for category in categories:
+        # Default properties to an empty list if it doesn't exist
+        category["properties"] = category.get("properties", [])
+        
         if category["parents"]:
             inherited_properties = []
             for parent_id in category["parents"]:
-                inherited_properties.extend(id_to_category[parent_id]["properties"])
+                # Default parent properties to an empty list if they don't exist
+                parent_properties = id_to_category[parent_id].get("properties", [])
+                inherited_properties.extend(parent_properties)
+            
             # Create a dictionary to resolve clashes (child overwrites parent)
             merged_properties = {}
             for prop in inherited_properties:
@@ -439,10 +447,14 @@ def inherit_properties(categories):
                         f"from parent(s) with new definition: {prop}"
                     )
                 merged_properties[prop[0]] = prop  # Overwrite with child property
+            
             # Convert back to a list
             category["properties"] = list(merged_properties.values())
+        
         updated_categories.append(category)
+    
     return updated_categories
+
 
 categories = inherit_properties(categories)
 
