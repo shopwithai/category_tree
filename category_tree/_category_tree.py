@@ -217,8 +217,8 @@ categories += health_and_beauty
 
 
 
-from .misc import misc
-categories += misc
+from .misc import misc_categories
+categories += misc_categories
 
 
 def inherit_properties(categories):
