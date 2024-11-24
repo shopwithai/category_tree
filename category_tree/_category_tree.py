@@ -1,25 +1,26 @@
 categories = [
+    {"id": 0, "name": "(Internal) Master Category, do not use", "is_root": True, "parents": [(atomicprice, int), (widthcm, int), (heightcm, int), (lengthcm, int), (weightg, int), (rgb_color, [int, int, int])]},
     # Root Categories
-    {"id": 1, "name": "Automotive & Vehicles", "is_root": True, "parents": []},
-    {"id": 2, "name": "Fashion & Accessories", "is_root": True, "parents": []},
-    {"id": 3, "name": "Electronics & Computers", "is_root": True, "parents": []},
-    {"id": 4, "name": "Home & Garden", "is_root": True, "parents": []},
-    {"id": 5, "name": "Health & Beauty", "is_root": True, "parents": []},
-    {"id": 6, "name": "Books, Movies & Music", "is_root": True, "parents": []},
-    {"id": 7, "name": "Sports & Outdoors", "is_root": True, "parents": []},
-    {"id": 8, "name": "Toys, Games & Hobbies", "is_root": True, "parents": []},
-    {"id": 9, "name": "Baby & Kids", "is_root": True, "parents": []},
-    {"id": 10, "name": "Food & Grocery", "is_root": True, "parents": []},
-    {"id": 11, "name": "Pets", "is_root": True, "parents": []},
-    {"id": 12, "name": "Travel & Experiences", "is_root": True, "parents": []},
-    {"id": 13, "name": "Services", "is_root": True, "parents": []},
-    {"id": 14, "name": "Industrial & Business", "is_root": True, "parents": []},
-    {"id": 15, "name": "Real Estate", "is_root": True, "parents": []},
-    {"id": 16, "name": "Deals & Discounts", "is_root": True, "parents": []},
-    {"id": 17, "name": "Software & Subscriptions", "is_root": True, "parents": []},
-    {"id": 18, "name": "Luxury & High-End Goods", "is_root": True, "parents": []},
-    {"id": 19, "name": "Gifts & Occasions", "is_root": True, "parents": []},
-    {"id": 20, "name": "Miscellaneous", "is_root": True, "parents": []},
+    {"id": 1, "name": "Automotive & Vehicles", "is_root": True, "parents": [0]},
+    {"id": 2, "name": "Fashion & Accessories", "is_root": True, "parents": [0]},
+    {"id": 3, "name": "Electronics & Computers", "is_root": True, "parents": [0]},
+    {"id": 4, "name": "Home & Garden", "is_root": True, "parents": [0]},
+    {"id": 5, "name": "Health & Beauty", "is_root": True, "parents": [0]},
+    {"id": 6, "name": "Books, Movies & Music", "is_root": True, "parents": [0]},
+    {"id": 7, "name": "Sports & Outdoors", "is_root": True, "parents": [0]},
+    {"id": 8, "name": "Toys, Games & Hobbies", "is_root": True, "parents": [0]},
+    {"id": 9, "name": "Baby & Kids", "is_root": True, "parents": [0]},
+    {"id": 10, "name": "Food & Grocery", "is_root": True, "parents": [0]},
+    {"id": 11, "name": "Pets", "is_root": True, "parents": [0]},
+    {"id": 12, "name": "Travel & Experiences", "is_root": True, "parents": [0]},
+    {"id": 13, "name": "Services", "is_root": True, "parents": [0]},
+    {"id": 14, "name": "Industrial & Business", "is_root": True, "parents": [0]},
+    {"id": 15, "name": "Real Estate", "is_root": True, "parents": [0]},
+    {"id": 16, "name": "Deals & Discounts", "is_root": True, "parents": [0]},
+    {"id": 17, "name": "Software & Subscriptions", "is_root": True, "parents": [0]},
+    {"id": 18, "name": "Luxury & High-End Goods", "is_root": True, "parents": [0]},
+    {"id": 19, "name": "Gifts & Occasions", "is_root": True, "parents": [0]},
+    {"id": 20, "name": "Miscellaneous", "is_root": True, "parents": [0]},
 
     # Automotive & Vehicles
     {"id": 21, "name": "Cars", "is_root": False, "parents": [1]},
@@ -418,6 +419,32 @@ categories = [
 
 from .f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
+
+def inherit_properties(categories):
+    id_to_category = {cat["id"]: cat for cat in categories}
+    updated_categories = []
+    for category in categories:
+        if category["parents"]:
+            inherited_properties = []
+            for parent_id in category["parents"]:
+                inherited_properties.extend(id_to_category[parent_id]["properties"])
+            # Create a dictionary to resolve clashes (child overwrites parent)
+            merged_properties = {}
+            for prop in inherited_properties:
+                merged_properties[prop[0]] = prop  # Add parent property
+            for prop in category["properties"]:
+                if prop[0] in merged_properties:
+                    print(
+                        f"Overwriting property '{prop[0]}' in category '{category['name']}' "
+                        f"from parent(s) with new definition: {prop}"
+                    )
+                merged_properties[prop[0]] = prop  # Overwrite with child property
+            # Convert back to a list
+            category["properties"] = list(merged_properties.values())
+        updated_categories.append(category)
+    return updated_categories
+
+categories = inherit_properties(categories)
 
 
 # Find next available id:
