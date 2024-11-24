@@ -419,6 +419,15 @@ categories = [
 from f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
 
+
+# Find next available id:
+max_idx = 0
+for c in categories:
+    idx = c["id"]
+    max_idx = max(idx, max_idx)
+print("Next available id is", max_idx)
+
+
 def get_implied_categories(category_id, categories):
     """
     Returns a set of category IDs that are implied by the given category ID,
