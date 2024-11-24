@@ -313,45 +313,7 @@ categories = [
     {"id": 397, "name": "Personal Training", "is_root": False, "parents": [395]},
     {"id": 398, "name": "Nutrition Counseling", "is_root": False, "parents": [395]},
 
-    # Industrial & Business
-    {"id": 399, "name": "Office Supplies", "is_root": False, "parents": [14]},
-    {"id": 400, "name": "Industrial Equipment", "is_root": False, "parents": [14]},
-    {"id": 401, "name": "Safety Equipment", "is_root": False, "parents": [14]},
-    {"id": 402, "name": "Packaging & Shipping", "is_root": False, "parents": [14]},
-
-    # Real Estate
-    {"id": 403, "name": "Residential", "is_root": False, "parents": [15]},
-    {"id": 404, "name": "Commercial", "is_root": False, "parents": [15]},
-    {"id": 405, "name": "Land", "is_root": False, "parents": [15]},
-    {"id": 406, "name": "Rental Properties", "is_root": False, "parents": [15]},
-
-    # Deals & Discounts
-    {"id": 407, "name": "Daily Deals", "is_root": False, "parents": [16]},
-    {"id": 408, "name": "Clearance", "is_root": False, "parents": [16]},
-    {"id": 409, "name": "Seasonal Sales", "is_root": False, "parents": [16]},
-
-    # Software & Subscriptions
-    {"id": 410, "name": "Productivity Software", "is_root": False, "parents": [17]},
-    {"id": 411, "name": "Security Software", "is_root": False, "parents": [17]},
-    {"id": 412, "name": "Design Software", "is_root": False, "parents": [17]},
-    {"id": 413, "name": "Streaming Services", "is_root": False, "parents": [17]},
-
-    # Luxury & High-End Goods
-    {"id": 414, "name": "Luxury Fashion", "is_root": False, "parents": [18]},
-    {"id": 415, "name": "Fine Jewelry & Watches", "is_root": False, "parents": [18]},
-    {"id": 416, "name": "Luxury Vehicles", "is_root": False, "parents": [18]},
-    {"id": 417, "name": "Fine Art", "is_root": False, "parents": [18]},
-
-    # Gifts & Occasions
-    {"id": 418, "name": "Birthday", "is_root": False, "parents": [19]},
-    {"id": 419, "name": "Wedding", "is_root": False, "parents": [19]},
-    {"id": 420, "name": "Holiday", "is_root": False, "parents": [19]},
-    {"id": 421, "name": "Personalized Gifts", "is_root": False, "parents": [19]},
-
-    # Miscellaneous
-    {"id": 422, "name": "Specialty Items", "is_root": False, "parents": [20]},
-    {"id": 423, "name": "Novelty Products", "is_root": False, "parents": [20]},
-    {"id": 424, "name": "Uncategorized", "is_root": False, "parents": [20]}
+    # misc stuff moved to own file
 ]
 
 from .f1_automotive_and_vehicles import automotive_and_vehicles
@@ -362,6 +324,11 @@ categories += fashion_and_accessories
 
 from .f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
+
+
+from .misc import misc
+categories += misc
+
 
 def inherit_properties(categories):
     # Create a dictionary for quick access to categories by their ID
