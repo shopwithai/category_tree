@@ -416,7 +416,7 @@ categories = [
 ]
 
 
-from .f3_electronics_and_computers import electronics_and_computers
+from f3_electronics_and_computers import electronics_and_computers
 categories += electronics_and_computers
 
 def get_implied_categories(category_id, categories):
