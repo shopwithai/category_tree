@@ -1,5 +1,5 @@
 categories = [
-    {"id": 0, "name": "(Internal) Master Category, do not use", "is_root": True, "parents": [], "properties": [("atomicprice", int), ("widthcm", int), ("heightcm", int), ("lengthcm", int), ("weightg", int), ("rgb_color", [int, int, int])]},
+    {"id": 0, "name": "(Internal) Master Category, do not use", "is_root": True, "parents": [], "properties": [("atomicprice", int), ("condition", str, ["New", "Used", "Refurbished"]), ("widthcm", int), ("heightcm", int), ("lengthcm", int), ("weightg", int), ("rgb_color", [int, int, int])]},
     # Root Categories
     {"id": 1, "name": "Automotive & Vehicles", "is_root": True, "parents": [0]},
     {"id": 2, "name": "Fashion & Accessories", "is_root": True, "parents": [0]},

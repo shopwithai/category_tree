@@ -13,7 +13,6 @@ electronics_and_computers = [
         ("gpu_type", str),
         ("operating_system", str, ["Windows", "macOS", "Linux", "Chrome OS", "Other"]),
         ("battery_life_hours", float),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("touchscreen", bool),
         ("keyboard_backlight", bool),
     ]},
@@ -27,7 +26,6 @@ electronics_and_computers = [
         ("storage_type", str, ["HDD", "SSD", "Hybrid"]),
         ("gpu_type", str),
         ("operating_system", str, ["Windows", "macOS", "Linux", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("form_factor", str, ["Tower", "Mini PC", "All-in-One", "Workstation", "Server"]),
     ]},
 
@@ -38,7 +36,6 @@ electronics_and_computers = [
         ("storage_gb", int),
         ("connectivity", str, ["WiFi", "WiFi + Cellular"]),
         ("operating_system", str, ["iOS", "Android", "Windows", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("camera_mp", int),
         ("battery_life_hours", float),
     ]},
@@ -54,7 +51,6 @@ electronics_and_computers = [
         ("base_clock_ghz", float),
         ("max_boost_clock_ghz", float),
         ("tdp_watts", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 91, "name": "Graphics Cards (GPUs)", "is_root": False, "parents": [89], "properties": [
@@ -64,7 +60,6 @@ electronics_and_computers = [
         ("gpu_series", str),
         ("memory_size_gb", int),
         ("memory_type", str, ["GDDR6", "GDDR5", "HBM2", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 92, "name": "Motherboards", "is_root": False, "parents": [89], "properties": [
@@ -76,7 +71,6 @@ electronics_and_computers = [
         ("memory_slots", int),
         ("max_memory_gb", int),
         ("supported_memory_type", str, ["DDR4", "DDR5", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 93, "name": "Memory (RAM)", "is_root": False, "parents": [89], "properties": [
@@ -86,7 +80,6 @@ electronics_and_computers = [
         ("capacity_gb", int),
         ("speed_mhz", int),
         ("number_of_modules", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 94, "name": "Storage (HDDs, SSDs)", "is_root": False, "parents": [89], "properties": [
@@ -96,7 +89,6 @@ electronics_and_computers = [
         ("capacity_gb", int),
         ("interface", str, ["SATA", "PCIe", "NVMe", "SAS", "USB", "Other"]),
         ("form_factor", str, ["2.5 inch", "3.5 inch", "M.2", "mSATA", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 95, "name": "Power Supplies", "is_root": False, "parents": [89], "properties": [
@@ -106,7 +98,6 @@ electronics_and_computers = [
         ("efficiency_rating", str, ["80 Plus", "Bronze", "Silver", "Gold", "Platinum", "Titanium"]),
         ("modular", str, ["Non-Modular", "Semi-Modular", "Fully Modular"]),
         ("form_factor", str, ["ATX", "SFX", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 96, "name": "Computer Accessories", "is_root": False, "parents": [85], "properties": []},
@@ -119,7 +110,6 @@ electronics_and_computers = [
         ("panel_type", str, ["IPS", "TN", "VA", "OLED", "Other"]),
         ("refresh_rate_hz", int),
         ("aspect_ratio", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 98, "name": "Keyboards & Mice", "is_root": False, "parents": [96], "properties": [
@@ -127,7 +117,6 @@ electronics_and_computers = [
         ("brand", str),
         ("model", str),
         ("connection_type", str, ["Wired", "Wireless"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("keyboard_type", str, ["Mechanical", "Membrane", "Other"]),
         ("backlit", bool),
         ("key_switch_type", str),
@@ -141,7 +130,6 @@ electronics_and_computers = [
         ("capacity_gb", int),
         ("interface", str, ["USB 2.0", "USB 3.0", "USB 3.1", "USB 3.2", "USB-C"]),
         ("encrypted", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 99, "name": "Networking Equipment", "is_root": False, "parents": [96], "properties": []},
@@ -153,7 +141,6 @@ electronics_and_computers = [
         ("max_speed_mbps", int),
         ("band", str, ["Single Band", "Dual Band", "Tri-Band"]),
         ("number_of_ports", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 101, "name": "Modems", "is_root": False, "parents": [99], "properties": [
@@ -161,7 +148,6 @@ electronics_and_computers = [
         ("model", str),
         ("type", str, ["Cable", "DSL", "Fiber", "Satellite", "Other"]),
         ("max_speed_mbps", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 102, "name": "Switches", "is_root": False, "parents": [99], "properties": [
@@ -170,7 +156,6 @@ electronics_and_computers = [
         ("number_of_ports", int),
         ("port_speed", str, ["10/100 Mbps", "Gigabit", "10 Gigabit", "Other"]),
         ("managed", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 103, "name": "Cameras & Lenses", "is_root": False, "parents": [3], "properties": []},
@@ -182,7 +167,6 @@ electronics_and_computers = [
         ("megapixels", float),
         ("sensor_size", str),
         ("video_resolution", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 105, "name": "Lenses", "is_root": False, "parents": [103], "properties": [
@@ -193,14 +177,12 @@ electronics_and_computers = [
         ("mount_type", str),
         ("lens_type", str, ["Prime", "Zoom", "Telephoto", "Wide Angle", "Macro", "Other"]),
         ("image_stabilization", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 106, "name": "Camera Accessories", "is_root": False, "parents": [103], "properties": [
         ("type", str, ["Tripod", "Bag", "Flash", "Battery", "Memory Card", "Filter", "Other"]),
         ("brand", str),
         ("model", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 107, "name": "Phones & Accessories", "is_root": False, "parents": [3], "properties": []},
@@ -211,7 +193,6 @@ electronics_and_computers = [
         ("storage_gb", int),
         ("screen_size_inches", float),
         ("operating_system", str, ["iOS", "Android", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("camera_mp", int),
         ("connectivity", str, ["4G", "5G", "Other"]),
         ("dual_sim", bool),
@@ -220,7 +201,6 @@ electronics_and_computers = [
     {"id": 109, "name": "Feature Phones", "is_root": False, "parents": [107], "properties": [
         ("brand", str),
         ("model", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("connectivity", str, ["2G", "3G", "4G"]),
         ("battery_life_hours", float),
         ("dual_sim", bool),
@@ -231,7 +211,6 @@ electronics_and_computers = [
         ("brand", str),
         ("model", str),
         ("compatible_with", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 111, "name": "Audio Equipment", "is_root": False, "parents": [3], "properties": []},
@@ -243,7 +222,6 @@ electronics_and_computers = [
         ("connection_type", str, ["Wired", "Wireless"]),
         ("noise_cancellation", bool),
         ("microphone", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 113, "name": "Speakers", "is_root": False, "parents": [111], "properties": [
@@ -252,7 +230,6 @@ electronics_and_computers = [
         ("type", str, ["Portable", "Bookshelf", "Floor-standing", "Soundbar", "Subwoofer", "Other"]),
         ("connection_type", str, ["Wired", "Wireless", "Bluetooth"]),
         ("power_output_watts", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 114, "name": "Home Theater Systems", "is_root": False, "parents": [111], "properties": [
@@ -261,14 +238,12 @@ electronics_and_computers = [
         ("number_of_channels", str, ["2.1", "5.1", "7.1", "9.1", "Other"]),
         ("connection_type", str, ["Wired", "Wireless"]),
         ("power_output_watts", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 115, "name": "Musical Instruments", "is_root": False, "parents": [111, 8], "properties": [
         ("instrument_type", str, ["Guitar", "Piano", "Violin", "Drums", "Keyboard", "Other"]),
         ("brand", str),
         ("model", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
         ("acoustic_or_electric", str, ["Acoustic", "Electric", "Both"]),
     ]},
 
@@ -281,7 +256,6 @@ electronics_and_computers = [
         ("resolution", str, ["HD", "Full HD", "4K", "8K"]),
         ("smart_tv", bool),
         ("display_type", str, ["LED", "OLED", "QLED", "Plasma", "LCD", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 118, "name": "Projectors", "is_root": False, "parents": [116], "properties": [
@@ -291,7 +265,6 @@ electronics_and_computers = [
         ("brightness_lumens", int),
         ("contrast_ratio", str),
         ("lamp_life_hours", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 119, "name": "Streaming Devices", "is_root": False, "parents": [116], "properties": [
@@ -300,7 +273,6 @@ electronics_and_computers = [
         ("supported_resolution", str, ["1080p", "4K", "Other"]),
         ("operating_system", str, ["Roku OS", "Fire OS", "Android TV", "Apple tvOS", "Other"]),
         ("voice_control", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 120, "name": "Gaming", "is_root": False, "parents": [3], "properties": []},
@@ -309,7 +281,6 @@ electronics_and_computers = [
         ("brand", str, ["Sony", "Microsoft", "Nintendo", "Other"]),
         ("model", str),
         ("storage_gb", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 122, "name": "Video Games", "is_root": False, "parents": [120], "properties": [
@@ -317,7 +288,6 @@ electronics_and_computers = [
         ("platform", str, ["PlayStation", "Xbox", "Nintendo Switch", "PC", "Other"]),
         ("genre", str, ["Action", "Adventure", "RPG", "Sports", "Other"]),
         ("age_rating", str, ["E", "T", "M", "Other"]),
-        ("condition", str, ["New", "Used"]),
     ]},
 
     {"id": 123, "name": "Gaming Accessories", "is_root": False, "parents": [120], "properties": [
@@ -325,7 +295,6 @@ electronics_and_computers = [
         ("brand", str),
         ("model", str),
         ("platform", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 124, "name": "Wearable Technology", "is_root": False, "parents": [3], "properties": []},
@@ -336,7 +305,6 @@ electronics_and_computers = [
         ("operating_system", str, ["watchOS", "Wear OS", "Tizen", "Other"]),
         ("screen_size_inches", float),
         ("connectivity", str, ["Bluetooth", "WiFi", "Cellular"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 126, "name": "Fitness Trackers", "is_root": False, "parents": [124], "properties": [
@@ -345,7 +313,6 @@ electronics_and_computers = [
         ("heart_rate_monitor", bool),
         ("gps", bool),
         ("water_resistant", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 127, "name": "Drones & Remote Control", "is_root": False, "parents": [3], "properties": []},
@@ -356,7 +323,6 @@ electronics_and_computers = [
         ("camera_resolution", str, ["1080p", "2.7K", "4K", "6K", "8K", "Other"]),
         ("flight_time_minutes", float),
         ("control_range_meters", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 129, "name": "RC Vehicles", "is_root": False, "parents": [127], "properties": [
@@ -365,7 +331,6 @@ electronics_and_computers = [
         ("model", str),
         ("scale", str, ["1:10", "1:8", "1:16", "Other"]),
         ("power_source", str, ["Electric", "Nitro", "Gasoline"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 130, "name": "Office Electronics", "is_root": False, "parents": [3], "properties": []},
@@ -377,7 +342,6 @@ electronics_and_computers = [
         ("color_printing", bool),
         ("duplex_printing", bool),
         ("wireless", bool),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 132, "name": "Projectors", "is_root": False, "parents": [130], "properties": [
@@ -387,14 +351,12 @@ electronics_and_computers = [
         ("brightness_lumens", int),
         ("contrast_ratio", str),
         ("lamp_life_hours", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 133, "name": "Telephones & Communication", "is_root": False, "parents": [130], "properties": [
         ("type", str, ["Landline Phone", "VoIP Phone", "Conference Phone", "Intercom", "Other"]),
         ("brand", str),
         ("model", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 134, "name": "Other Electronics", "is_root": False, "parents": [3], "properties": []},
@@ -404,7 +366,6 @@ electronics_and_computers = [
         ("brand", str),
         ("model", str),
         ("capacity_mah", int),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 136, "name": "Smart Home Devices", "is_root": False, "parents": [134], "properties": [
@@ -412,12 +373,10 @@ electronics_and_computers = [
         ("brand", str),
         ("model", str),
         ("voice_assistant", str, ["Alexa", "Google Assistant", "Siri", "Other"]),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
     {"id": 137, "name": "Miscellaneous Electronics", "is_root": False, "parents": [134], "properties": [
         ("description", str),
-        ("condition", str, ["New", "Used", "Refurbished"]),
     ]},
 
 ]
